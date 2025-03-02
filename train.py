@@ -136,7 +136,8 @@ if __name__ == '__main__':
 
     if not args.no_cuda:
         os.environ['CUDA_VISIBLE_DEVICES'] = args.device
-    device = torch.device('cpu' if args.no_cuda else 'cuda')
+    # device = torch.device('cpu' if args.no_cuda else 'cuda')
+    device = torch.device('cpu')
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     os.makedirs(os.path.join(args.ckpt, args.id), exist_ok=True)

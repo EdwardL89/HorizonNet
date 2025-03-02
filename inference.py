@@ -181,7 +181,8 @@ if __name__ == '__main__':
     if not os.path.isdir(args.output_dir):
         print('Output directory %s not existed. Create one.' % args.output_dir)
         os.makedirs(args.output_dir)
-    device = torch.device('cpu' if args.no_cuda else 'cuda')
+    device = torch.device('cpu')
+    # device = torch.device('cpu' if args.no_cuda else 'cuda')
 
     # Loaded trained model
     net = utils.load_trained_model(HorizonNet, args.pth).to(device)
